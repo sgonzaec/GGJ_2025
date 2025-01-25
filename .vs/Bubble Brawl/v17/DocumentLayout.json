@@ -1,12 +1,36 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\User\\Documents\\Repositories\\Bubble Brawl\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1D3D2301-967D-2FAA-2F5C-E70AB9C6A524}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\repositories\\bubble brawl\\assets\\scripts\\servermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D3D2301-967D-2FAA-2F5C-E70AB9C6A524}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\servermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
+        {
+          "DockedWidth": 653,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ServerManagement.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\Repositories\\Bubble Brawl\\Assets\\Scripts\\ServerManagement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ServerManagement.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\Repositories\\Bubble Brawl\\Assets\\Scripts\\ServerManagement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ServerManagement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T02:35:40.147Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
         {
           "DockedWidth": 653,
           "SelectedChildIndex": -1,
