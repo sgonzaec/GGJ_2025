@@ -4,39 +4,57 @@ using Unity.Netcode;
 
 public class BubbleController : NetworkBehaviour
 {
-    public float speed = 0;
+    public float speed = 5f; // Velocidad del movimiento
     private Rigidbody rb;
     private float movementX;
     private float movementY;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float rotationThreshold = 0.1f; // Umbral mínimo para la rotación.
 
     public override void OnNetworkDespawn()
     {
-        if (!IsOwner) { 
-            enabled = false; 
+        if (!IsOwner)
+        {
+            enabled = false;
             return;
         }
     }
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void OnMove(InputValue movementValue)
     {
         Vector2 movementVector = movementValue.Get<Vector2>();
         movementX = movementVector.x;
         movementY = movementVector.y;
-        
     }
 
     private void FixedUpdate()
     {
+        // Crear un vector de movimiento basado en los inputs.
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
-        if (rb != null) {
+
+        // Mover al jugador.
+        if (rb != null)
+        {
             rb.AddForce(movement * speed);
+        }
+
+        // Rotar al jugador hacia la dirección del movimiento.
+        RotateCharacter(movement);
+    }
+
+    private void RotateCharacter(Vector3 movement)
+    {
+        // Comprobar si el vector de movimiento es lo suficientemente grande.
+        if (movement.magnitude > rotationThreshold)
+        {
+            // Calcular la nueva rotación basada en el movimiento.
+            Quaternion targetRotation = Quaternion.LookRotation(movement);
+            // Interpolar suavemente la rotación actual hacia la nueva rotación.
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
         }
     }
 }
