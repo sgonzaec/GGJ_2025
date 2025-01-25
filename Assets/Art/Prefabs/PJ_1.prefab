@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 4198478924640280765}
   - component: {fileID: 6243240459751236294}
   - component: {fileID: 3429027042062311580}
+  - component: {fileID: 6339791278033100680}
+  - component: {fileID: -3539020716879567998}
   m_Layer: 0
   m_Name: PJ_1
   m_TagString: Untagged
@@ -209,6 +211,36 @@ CapsuleCollider:
   m_Height: 3.227631
   m_Direction: 1
   m_Center: {x: 0, y: 1.2722366, z: 0}
+--- !u!114 &6339791278033100680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325964187552258728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198547a41e626084da2a8aaef5ed2f1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  attackKey: 32
+  attackRange: 5
+  attackDamage: 1
+--- !u!114 &-3539020716879567998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325964187552258728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28612d3e3688ad4ba440b6b0f11fb36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  lifeIcons: []
 --- !u!1001 &445030474410911830
 PrefabInstance:
   m_ObjectHideFlags: 0

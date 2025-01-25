@@ -3,13 +3,13 @@ using Unity.Netcode;
 
 public class PlayerAttack : NetworkBehaviour
 {
-    public KeyCode attackKey = KeyCode.Space; // Tecla de ataque.
-    public float attackRange = 5f; // Distancia máxima para atacar.
-    public int attackDamage = 1; // Daño del ataque.
+    public KeyCode attackKey = KeyCode.Space;
+    public float attackRange = 5f;
+    public int attackDamage = 1;
 
     private void Update()
     {
-        if (!IsOwner) return; // Asegurarse de que solo el jugador local pueda atacar.
+        if (!IsOwner) return;
 
         if (Input.GetKeyDown(attackKey))
         {
@@ -20,16 +20,17 @@ public class PlayerAttack : NetworkBehaviour
     [ServerRpc]
     private void AttemptAttackServerRpc(ServerRpcParams rpcParams = default)
     {
-        // Encontrar todos los jugadores en la escena.
         var players = FindObjectsOfType<PlayerAttack>();
+
 
         foreach (var player in players)
         {
-            if (player != this) // No atacar al jugador que está ejecutando el ataque.
+            if (player != this)
             {
                 float distance = Vector3.Distance(transform.position, player.transform.position);
                 if (distance <= attackRange)
                 {
+                    Debug.Log("Atacando!");
                     player.TakeDamageServerRpc(attackDamage);
                 }
             }
