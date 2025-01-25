@@ -19,3 +19,5 @@ crashlytics-build.properties
 
 # Packed Unity Package
 *.unitypackage
+
+.vs/
