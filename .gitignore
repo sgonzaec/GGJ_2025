@@ -1,3 +1,4 @@
+
 # Unity generated files
 [Ll]ibrary/
 [Tt]emp/
@@ -19,3 +20,5 @@ crashlytics-build.properties
 
 # Packed Unity Package
 *.unitypackage
+
+.vs/
