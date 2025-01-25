@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Stilkev\\Documents\\GitHub\\GGJ_2025\\",
+  "WorkspaceRootPath": "C:\\Users\\simon\\Documents\\GGJ_2025\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2760A4C-F0D9-5678-B5EC-E10AF4D0A213}|Assembly-CSharp.csproj|c:\\users\\stilkev\\documents\\github\\ggj_2025\\assets\\newsurfaceshader.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2760A4C-F0D9-5678-B5EC-E10AF4D0A213}|Assembly-CSharp.csproj|solutionrelative:assets\\newsurfaceshader.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2760A4C-F0D9-5678-B5EC-E10AF4D0A213}|Assembly-CSharp.csproj|c:\\users\\simon\\documents\\ggj_2025\\assets\\scripts\\players\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2760A4C-F0D9-5678-B5EC-E10AF4D0A213}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\players\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2760A4C-F0D9-5678-B5EC-E10AF4D0A213}|Assembly-CSharp.csproj|C:\\Users\\simon\\Documents\\GGJ_2025\\Assets\\Scripts\\HubLife\\LifeHub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2760A4C-F0D9-5678-B5EC-E10AF4D0A213}|Assembly-CSharp.csproj|solutionrelative:Assets\\Scripts\\HubLife\\LifeHub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,19 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "NewSurfaceShader.shader",
-              "DocumentMoniker": "C:\\Users\\Stilkev\\Documents\\GitHub\\GGJ_2025\\Assets\\NewSurfaceShader.shader",
-              "RelativeDocumentMoniker": "Assets\\NewSurfaceShader.shader",
-              "ToolTip": "C:\\Users\\Stilkev\\Documents\\GitHub\\GGJ_2025\\Assets\\NewSurfaceShader.shader",
-              "RelativeToolTip": "Assets\\NewSurfaceShader.shader",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
-              "WhenOpened": "2025-01-25T02:47:07.388Z",
+              "Title": "PlayerAttack.cs",
+              "DocumentMoniker": "C:\\Users\\simon\\Documents\\GGJ_2025\\Assets\\Scripts\\Players\\PlayerAttack.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Players\\PlayerAttack.cs",
+              "ToolTip": "C:\\Users\\simon\\Documents\\GGJ_2025\\Assets\\Scripts\\Players\\PlayerAttack.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Players\\PlayerAttack.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T04:51:44.044Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LifeHub.cs",
+              "DocumentMoniker": "C:\\Users\\simon\\Documents\\GGJ_2025\\Assets\\Scripts\\HubLife\\LifeHub.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HubLife\\LifeHub.cs",
+              "ToolTip": "C:\\Users\\simon\\Documents\\GGJ_2025\\Assets\\Scripts\\HubLife\\LifeHub.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HubLife\\LifeHub.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T03:09:52.55Z"
             }
           ]
         }
