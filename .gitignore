@@ -22,3 +22,5 @@ crashlytics-build.properties
 *.unitypackage
 
 .vs/
+/.vs/GGJ_2025/v17/.suo
+/.vs/*
