@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Documents\\Repositories\\Bubble Brawl\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1D3D2301-967D-2FAA-2F5C-E70AB9C6A524}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\repositories\\bubble brawl\\assets\\scripts\\servermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D3D2301-967D-2FAA-2F5C-E70AB9C6A524}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\servermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D3D2301-967D-2FAA-2F5C-E70AB9C6A524}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\repositories\\bubble brawl\\assets\\scripts\\servermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D3D2301-967D-2FAA-2F5C-E70AB9C6A524}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\servermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ServerManagement.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Repositories\\Bubble Brawl\\Assets\\Scripts\\ServerManagement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ServerManagement.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\Repositories\\Bubble Brawl\\Assets\\Scripts\\ServerManagement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ServerManagement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAUAAAAAAAAAA==",
+              "Title": "ServerManager.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\Repositories\\Bubble Brawl\\Assets\\Scripts\\ServerManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ServerManager.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\Repositories\\Bubble Brawl\\Assets\\Scripts\\ServerManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ServerManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T02:35:40.147Z",
+              "WhenOpened": "2025-01-25T02:42:41.328Z",
               "EditorCaption": ""
             }
           ]
