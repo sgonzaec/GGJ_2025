@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\user\\documents\\repositories\\ggj_2025\\assets\\scripts\\menuoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\menuoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2760A4C-F0D9-5678-B5EC-E10AF4D0A213}|Assembly-CSharp.csproj|C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\assets\\scripts\\menuinitial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2760A4C-F0D9-5678-B5EC-E10AF4D0A213}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menuinitial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\Assets\\Scripts\\MenuOptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\MenuOptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2760A4C-F0D9-5678-B5EC-E10AF4D0A213}|Assembly-CSharp.csproj|C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\assets\\scripts\\players\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2760A4C-F0D9-5678-B5EC-E10AF4D0A213}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\players\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\Lit.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\Lit.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2760A4C-F0D9-5678-B5EC-E10AF4D0A213}|Assembly-CSharp.csproj|C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\Assets\\Scripts\\HubLife\\LifeHub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2760A4C-F0D9-5678-B5EC-E10AF4D0A213}|Assembly-CSharp.csproj|solutionrelative:Assets\\Scripts\\HubLife\\LifeHub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\Assets\\Scripts\\MenuInitial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\MenuInitial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:1:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\Lit.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:1:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\Lit.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:2:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\Lit.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:2:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\Lit.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,36 +34,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MenuOptions.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\Assets\\Scripts\\MenuOptions.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MenuOptions.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\Assets\\Scripts\\MenuOptions.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MenuOptions.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwCUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T17:38:36.583Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "MenuInitial.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\Assets\\Scripts\\MenuInitial.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MenuInitial.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\Assets\\Scripts\\MenuInitial.cs",
               "RelativeToolTip": "Assets\\Scripts\\MenuInitial.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T17:19:15.461Z"
+              "WhenOpened": "2025-01-25T17:19:15.461Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Lit.shader",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\Lit.shader",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\Lit.shader",
@@ -67,12 +59,23 @@
               "RelativeToolTip": "Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\Lit.shader",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
-              "WhenOpened": "2025-01-25T05:04:14.471Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-25T05:04:14.471Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
+              "Title": "Lit.shader",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\Lit.shader",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\Lit.shader",
+              "ToolTip": "C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\Lit.shader",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\Lit.shader",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2025-01-25T05:04:14.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "PlayerAttack.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\Assets\\Scripts\\Players\\PlayerAttack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Players\\PlayerAttack.cs",
@@ -84,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "LifeHub.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\Assets\\Scripts\\HubLife\\LifeHub.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\HubLife\\LifeHub.cs",
@@ -93,6 +96,17 @@
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABgAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-25T03:09:52.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MenuOptions.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\Assets\\Scripts\\MenuOptions.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MenuOptions.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\Repositories\\GGJ_2025\\Assets\\Scripts\\MenuOptions.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MenuOptions.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T17:38:36.583Z"
             }
           ]
         },
