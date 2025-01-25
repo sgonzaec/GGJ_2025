@@ -65,7 +65,6 @@
     <Compile Include="Assets\Editor\NonCore\AskFeedbackDialog.cs" />
     <Compile Include="Assets\Editor\Project.cs" />
     <Compile Include="Assets\Editor\ExternalLinks.cs" />
-    <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
     <Compile Include="Assets\Editor\AssetModBlock\EditorQuit.cs" />
     <Compile Include="Assets\Editor\ValidateCopiedFoldersIntegrity.cs" />
     <Compile Include="Assets\Editor\ParrelSyncProjectSettings.cs" />

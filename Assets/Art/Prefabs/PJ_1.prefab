@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 1325964187552258728}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -136,7 +136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  speed: 10
+  speed: 15
+  rotationThreshold: 0.1
 --- !u!114 &4198478924640280765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,10 +208,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.77593887
   m_Height: 3.227631
   m_Direction: 1
-  m_Center: {x: 0, y: 1.2722366, z: 0}
+  m_Center: {x: -0.0043290854, y: 1.2722366, z: -0.27161014}
 --- !u!114 &6339791278033100680
 MonoBehaviour:
   m_ObjectHideFlags: 0
