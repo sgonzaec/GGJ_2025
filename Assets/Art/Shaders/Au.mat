@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Fresnel
+  m_Name: Au
   m_Shader: {fileID: -6465566751694194690, guid: a38b12aae74d4a943b0621ecacd000ca, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -56,7 +56,7 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 0.21226855, g: 1.0465332, b: 0.919514, a: 0.7294118}
+    - _Color: {r: 1.1236067, g: 1.1382279, b: 1.014741, a: 0.7294118}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &9147495510444380835
