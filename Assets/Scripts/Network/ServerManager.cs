@@ -5,7 +5,7 @@ using Unity.Netcode;
     {
         void OnGUI()
         {
-            GUILayout.BeginArea(new Rect(0, 15, 300, 300));
+            GUILayout.BeginArea(new Rect(10, 15, 300, 300));
             if (!NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer)
             {
                 StartButtons();
