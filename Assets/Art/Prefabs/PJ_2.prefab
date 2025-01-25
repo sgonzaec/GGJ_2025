@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 6339791278033100680}
   - component: {fileID: -3539020716879567998}
   m_Layer: 0
-  m_Name: PJ_1
+  m_Name: PJ_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1136574171
+  GlobalObjectIdHash: 1230490533
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   speed: 10
+  rotationThreshold: 0.1
 --- !u!114 &4198478924640280765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +293,7 @@ PrefabInstance:
     - target: {fileID: -6461722992069788025, guid: bf507614a42ecd04c88bc4427d1b6438, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 3f1f9f5deb7d9974f824b1b7f2d604e2, type: 2}
+      objectReference: {fileID: 2100000, guid: c0544808730d9be4b992618f15b6c268, type: 2}
     - target: {fileID: 919132149155446097, guid: bf507614a42ecd04c88bc4427d1b6438, type: 3}
       propertyPath: m_Name
       value: animacion basica
