@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using Unity.Netcode;
 using TMPro;
+using System.Linq;
+using System;
 
 public class PlayerHUD : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class PlayerHUD : MonoBehaviour
     public Transform playerListContainer; // Contenedor en el UI donde se añadirán los elementos de vida
 
     private Dictionary<ulong, TMP_Text> playerLivesTexts = new Dictionary<ulong, TMP_Text>();
+    private Dictionary<ulong, CanvasGroup[]> playerLivesHearts = new Dictionary<ulong, CanvasGroup[]>();
 
     private void Start()
     {
@@ -24,7 +27,7 @@ public class PlayerHUD : MonoBehaviour
         {
             Debug.Log("Cliente conectado, notificando al servidor.");
             NotifyServerOfConnectionServerRpc();
-            AddPlayerToHUDClientRpc(NetworkManager.Singleton.LocalClientId, 3); // Añadir el cliente a sí mismo con 100 de vida
+            AddPlayerToHUDClientRpc(NetworkManager.Singleton.LocalClientId, 3);
             Debug.Log("Es cliente. Suscribiéndose al evento OnClientConnectedCallback.");
             NetworkManager.Singleton.OnClientConnectedCallback += OnPlayerConnected;
             // Registrar jugadores conectados en el momento en que la escena carga
@@ -114,6 +117,7 @@ public class PlayerHUD : MonoBehaviour
             return;
         }
 
+        Debug.Log($"Ya esta en la lista? {playerLivesTexts.ContainsKey(playerId)} ");
         // Solo añadir a la lista si no está ya presente
         if (!playerLivesTexts.ContainsKey(playerId))
         {
@@ -129,8 +133,41 @@ public class PlayerHUD : MonoBehaviour
             // Asignar el texto de vida al jugador
             lifeText.text = $"Player {playerId}: {health}";
 
+            // Obtener los CanvasGroup de los corazones
+            CanvasGroup[] heartCanvasGroups = newLifeElement.GetComponentsInChildren<CanvasGroup>();
+
+            Debug.Log($"Cambas group{heartCanvasGroups.Length}");
+
+            // Asegúrate de que haya tres CanvasGroup (uno por cada corazón)
+            if (heartCanvasGroups.Length == 3)
+            {
+                // Cambiar la visibilidad u opacidad de los corazones
+                for (int i = 0; i < 3; i++)
+                {
+                    Debug.Log($"indice {i}");
+                    Debug.Log($"health {health}");
+                    if (i >= health) // Si el índice es mayor o igual a la vida, desactiva el corazón
+                    {
+                        //heartCanvasGroups[i].gameObject.SetActive(false);
+                        heartCanvasGroups[i].alpha = 0.3f; // Hacerlo más transparente
+                        // O si prefieres desactivarlo completamente, puedes usar:
+                        // heartCanvasGroups[i].gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        heartCanvasGroups[i].alpha = 1f; // Hacerlo completamente visible
+                                                         // O si prefieres activarlo de nuevo, puedes usar:
+                                                         // heartCanvasGroups[i].gameObject.SetActive(true);
+                    }
+                }
+            }
+
+            // Forzar la actualización del layout para evitar solapamientos
+            LayoutRebuilder.ForceRebuildLayoutImmediate(playerListContainer.GetComponent<RectTransform>());
+            Array.Reverse(heartCanvasGroups);
             // Guardar la referencia para actualizaciones posteriores
             playerLivesTexts.Add(playerId, lifeText);
+            playerLivesHearts.Add(playerId, heartCanvasGroups);
         }
     }
 
@@ -147,7 +184,31 @@ public class PlayerHUD : MonoBehaviour
         {
             if (playerLivesTexts.ContainsKey(player.OwnerClientId))
             {
+                Debug.Log($"Actualizando texto");
                 playerLivesTexts[player.OwnerClientId].text = $"Player {player.OwnerClientId}: {player.health.Value}";
+            }
+
+            if (playerLivesHearts.ContainsKey(player.OwnerClientId)) {
+
+
+                for (int i = 0; i <= playerLivesHearts[player.OwnerClientId].Length - 1; i++)
+                {
+                    Debug.Log($"indice {i}");
+                    Debug.Log($"health {player.health.Value}");
+                    if (i >= player.health.Value) // Si el índice es mayor o igual a la vida, desactiva el corazón
+                    {
+                        //heartCanvasGroups[i].gameObject.SetActive(false);
+                        playerLivesHearts[player.OwnerClientId][i].alpha = 0.3f; // Hacerlo más transparente
+                        // O si prefieres desactivarlo completamente, puedes usar:
+                        // heartCanvasGroups[i].gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        playerLivesHearts[player.OwnerClientId][i].alpha = 1f; // Hacerlo completamente visible
+                                                                                 // O si prefieres activarlo de nuevo, puedes usar:
+                                                                                 // heartCanvasGroups[i].gameObject.SetActive(true);
+                    }
+                }
             }
         }
     }
@@ -195,17 +256,19 @@ public class PlayerHUD : MonoBehaviour
 
             // Obtener los CanvasGroup de los corazones
             CanvasGroup[] heartCanvasGroups = newLifeElement.GetComponentsInChildren<CanvasGroup>();
-            Debug.Log($"ICambas group{heartCanvasGroups.Length}");
+            Debug.Log($"Cambas group{heartCanvasGroups.Length}");
             // Asegúrate de que haya tres CanvasGroup (uno por cada corazón)
             if (heartCanvasGroups.Length == 3)
             {
                 // Cambiar la visibilidad u opacidad de los corazones
                 for (int i = 0; i < 3; i++)
                 {
+                    Debug.Log($"indice {i}");
+                    Debug.Log($"health {health}");
                     if (i >= health) // Si el índice es mayor o igual a la vida, desactiva el corazón
                     {
-                        heartCanvasGroups[i].gameObject.SetActive(false);
-                        //heartCanvasGroups[i].alpha = 0.3f; // Hacerlo más transparente
+                        //heartCanvasGroups[i].gameObject.SetActive(false);
+                        heartCanvasGroups[i].alpha = 0.3f; // Hacerlo más transparente
                         // O si prefieres desactivarlo completamente, puedes usar:
                         // heartCanvasGroups[i].gameObject.SetActive(false);
                     }
@@ -220,9 +283,10 @@ public class PlayerHUD : MonoBehaviour
 
             // Forzar la actualización del layout para evitar solapamientos
             LayoutRebuilder.ForceRebuildLayoutImmediate(playerListContainer.GetComponent<RectTransform>());
-
+            Array.Reverse(heartCanvasGroups);
             // Guardar la referencia para actualizaciones posteriores
             playerLivesTexts.Add(playerId, lifeText);
+            playerLivesHearts.Add(playerId, heartCanvasGroups);
         }
     }
 }
