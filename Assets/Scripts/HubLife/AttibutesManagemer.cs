@@ -3,7 +3,7 @@ using Unity.Netcode;
 
 public class AttibutesManager : NetworkBehaviour
 {
-    public NetworkVariable<int> health = new NetworkVariable<int>(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    public NetworkVariable<int> health = new NetworkVariable<int>(100);
     public int attack = 10;
 
     public void TakeDamage(int amount)
