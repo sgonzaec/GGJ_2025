@@ -9,4 +9,12 @@ public class ClientNetworkTransform : NetworkTransform
     {
         return false;
     }
+
+    /*public override void OnNetworkSpawn()
+    {
+        if (IsOwner)
+        {
+            Debug.Log("Player spawned: " + OwnerClientId);
+        }
+    }*/
 }

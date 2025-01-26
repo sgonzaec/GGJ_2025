@@ -5,12 +5,10 @@ public class PlayerAttack : NetworkBehaviour
 {
     public KeyCode attackKey = KeyCode.Space;
     public float attackRange = 5f;
-    public int attackDamage = 1;
 
     private void Update()
     {
-        if (!IsOwner) return;
-
+        if (!IsOwner) return; // Solo el jugador propietario puede atacar
         if (Input.GetKeyDown(attackKey))
         {
             AttemptAttackServerRpc();
@@ -20,30 +18,20 @@ public class PlayerAttack : NetworkBehaviour
     [ServerRpc]
     private void AttemptAttackServerRpc(ServerRpcParams rpcParams = default)
     {
-        var players = FindObjectsOfType<PlayerAttack>();
-
+        // Obtiene todos los jugadores en la escena
+        var players = FindObjectsOfType<AttibutesManager>();
 
         foreach (var player in players)
         {
-            if (player != this)
+            if (player != this.GetComponent<AttibutesManager>()) // Evitar que un jugador se ataque a sí mismo
             {
                 float distance = Vector3.Distance(transform.position, player.transform.position);
                 if (distance <= attackRange)
                 {
-                    Debug.Log("Atacando!");
-                    player.TakeDamageServerRpc(attackDamage);
+                    Debug.Log($"{gameObject.name} está atacando a {player.gameObject.name}");
+                    GetComponent<AttibutesManager>().DealDamage(player.gameObject);
                 }
             }
-        }
-    }
-
-    [ServerRpc]
-    public void TakeDamageServerRpc(int damage)
-    {
-        var lifeHub = GetComponent<LifeHub>();
-        if (lifeHub != null)
-        {
-            lifeHub.LoseLife();
         }
     }
 }

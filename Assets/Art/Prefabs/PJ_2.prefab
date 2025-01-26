@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6243240459751236294}
   - component: {fileID: 3429027042062311580}
   - component: {fileID: 6339791278033100680}
-  - component: {fileID: -3539020716879567998}
+  - component: {fileID: 3013831496893993905}
   m_Layer: 0
   m_Name: PJ_2
   m_TagString: Untagged
@@ -208,10 +208,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 3.227631
+  m_Radius: 0.77
+  m_Height: 3.26
   m_Direction: 1
-  m_Center: {x: 0, y: 1.2722366, z: 0}
+  m_Center: {x: 0, y: 1.27, z: 0}
 --- !u!114 &6339791278033100680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,8 +227,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   attackKey: 32
   attackRange: 5
-  attackDamage: 1
---- !u!114 &-3539020716879567998
+--- !u!114 &3013831496893993905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,11 +236,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1325964187552258728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a28612d3e3688ad4ba440b6b0f11fb36, type: 3}
+  m_Script: {fileID: 11500000, guid: 05e9a5b10029cd14193278c09b2c7099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  lifeIcons: []
+  health:
+    m_InternalValue: 3
+  attack: 1
 --- !u!1001 &445030474410911830
 PrefabInstance:
   m_ObjectHideFlags: 0
