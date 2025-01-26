@@ -3,14 +3,14 @@ using Unity.Netcode;
 
 public class AttibutesManager : NetworkBehaviour
 {
-    public NetworkVariable<int> health = new NetworkVariable<int>(100);
-    public int attack = 10;
+    public NetworkVariable<int> health = new NetworkVariable<int>(3);
+    public int attack = 1;
 
     public override void OnNetworkSpawn()
     {
         if (IsServer)
         {
-            health.Value = 100; // Valor inicial de salud
+            health.Value = 3; // Valor inicial de salud
         }
     }
 

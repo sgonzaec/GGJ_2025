@@ -241,8 +241,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   health:
-    m_InternalValue: 100
-  attack: 10
+    m_InternalValue: 3
+  attack: 1
 --- !u!1001 &445030474410911830
 PrefabInstance:
   m_ObjectHideFlags: 0
