@@ -180,36 +180,57 @@ public class PlayerHUD : MonoBehaviour
     private void UpdateLivesDisplay()
     {
         var players = FindObjectsOfType<AttibutesManager>();
+        List<ulong> playersToRemove = new List<ulong>(); // Lista para jugadores que han muerto
+
         foreach (var player in players)
         {
             if (playerLivesTexts.ContainsKey(player.OwnerClientId))
             {
-                Debug.Log($"Actualizando texto");
                 playerLivesTexts[player.OwnerClientId].text = $"Player {player.OwnerClientId}: {player.health.Value}";
             }
 
-            if (playerLivesHearts.ContainsKey(player.OwnerClientId)) {
-
-
-                for (int i = 0; i <= playerLivesHearts[player.OwnerClientId].Length - 1; i++)
+            if (playerLivesHearts.ContainsKey(player.OwnerClientId))
+            {
+                for (int i = 0; i < playerLivesHearts[player.OwnerClientId].Length; i++)
                 {
-                    Debug.Log($"indice {i}");
-                    Debug.Log($"health {player.health.Value}");
-                    if (i >= player.health.Value) // Si el índice es mayor o igual a la vida, desactiva el corazón
+                    if (i >= player.health.Value)
                     {
-                        //heartCanvasGroups[i].gameObject.SetActive(false);
-                        playerLivesHearts[player.OwnerClientId][i].alpha = 0.3f; // Hacerlo más transparente
-                        // O si prefieres desactivarlo completamente, puedes usar:
-                        // heartCanvasGroups[i].gameObject.SetActive(false);
+                        playerLivesHearts[player.OwnerClientId][i].alpha = 0.3f; // Más transparente
                     }
                     else
                     {
-                        playerLivesHearts[player.OwnerClientId][i].alpha = 1f; // Hacerlo completamente visible
-                                                                                 // O si prefieres activarlo de nuevo, puedes usar:
-                                                                                 // heartCanvasGroups[i].gameObject.SetActive(true);
+                        playerLivesHearts[player.OwnerClientId][i].alpha = 1f; // Totalmente visible
                     }
                 }
             }
+
+            // Si la vida es 0, marcar para eliminar
+            if (player.health.Value <= 0)
+            {
+                playersToRemove.Add(player.OwnerClientId);
+            }
+        }
+
+        // Eliminar las barras de vida de los jugadores muertos
+        foreach (var playerId in playersToRemove)
+        {
+            RemovePlayerFromHUD(playerId);
+        }
+    }
+
+    private void RemovePlayerFromHUD(ulong playerId)
+    {
+        if (playerLivesTexts.ContainsKey(playerId))
+        {
+            // Destruir el objeto de UI
+            TMP_Text lifeText = playerLivesTexts[playerId];
+            Destroy(lifeText.transform.parent.gameObject);
+
+            // Eliminar de los diccionarios
+            playerLivesTexts.Remove(playerId);
+            playerLivesHearts.Remove(playerId);
+
+            Debug.Log($"Jugador {playerId} eliminado del HUD.");
         }
     }
 
