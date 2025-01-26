@@ -4,18 +4,11 @@ using System.Collections;
 
 public class AttibutesManager : NetworkBehaviour
 {
-    public NetworkVariable<int> health = new NetworkVariable<int>(3);
+    // La salud es manejada como una NetworkVariable
+    public NetworkVariable<int> health = new NetworkVariable<int>(3, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     public int attack = 1;
     public GameObject[] respawnPoints;
     private int deathCount = 0;
-
-    public override void OnNetworkSpawn()
-    {
-        if (IsServer)
-        {
-            health.Value = 3; // Valor inicial de salud
-        }
-    }
 
     public void TakeDamage(int amount)
     {
@@ -40,10 +33,8 @@ public class AttibutesManager : NetworkBehaviour
         }
     }
 
-
     private IEnumerator HandlePlayerDeath()
     {
-
         // Espera 1 segundo antes del respawn
         yield return new WaitForSeconds(1f);
 
@@ -57,30 +48,36 @@ public class AttibutesManager : NetworkBehaviour
         }
         else
         {
-            // Respawn del jugador (a través de un RPC que lo invoque el propietario)
-            RespawnPlayerClientRpc();
+            // El servidor controla el respawn
+            RespawnPlayerServerRpc();
         }
     }
 
-    // RPC para el cliente propietario que invoca al servidor
-    [ClientRpc]
-    private void RespawnPlayerClientRpc()
-    {
-        // Solo el propietario invoca el ServerRpc
-        if (IsOwner)
-        {
-            RespawnPlayer();  // Solo el propietario invoca el ServerRpc
-        }
-    }
-
-    // ServerRpc para el servidor que respawnea al jugador
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     private void RespawnPlayerServerRpc()
     {
-        // Lógica de respawn solo ejecutada en el servidor
-        RespawnPlayer();
+        // Resetea la vida y ejecuta el respawn
+        health.Value = 3; // Esto sincroniza automáticamente la salud con los clientes
+        Debug.Log($"Reseteando la salud del jugador {gameObject.name} a {health.Value}");
+
+        RespawnPlayer(); // Lógica de respawn en el servidor
+
+        // Notifica a los clientes que el jugador ha respawneado
+        RespawnPlayerClientRpc(transform.position, transform.rotation);
     }
 
+    [ClientRpc]
+    private void RespawnPlayerClientRpc(Vector3 newPosition, Quaternion newRotation)
+    {
+        Debug.Log($"El jugador {gameObject.name} ha respawneado en la posición {newPosition}");
+
+        // Actualiza la posición y rotación del jugador en el cliente
+        transform.position = newPosition;
+        transform.rotation = newRotation;
+
+        // Asegurarse de que el jugador esté activo
+        gameObject.SetActive(true);
+    }
 
     [ClientRpc]
     private void DestroyPlayerClientRpc()
@@ -88,20 +85,17 @@ public class AttibutesManager : NetworkBehaviour
         Debug.Log("Destruyendo el jugador en los clientes.");
         Destroy(gameObject);
     }
+
     private void RespawnPlayer()
     {
-        // Restablecer la vida del jugador
-        health.Value = 3;
-
-        // Elegir un punto de respawn aleatorio
+        // El servidor elige un punto de respawn
         if (respawnPoints.Length > 0)
         {
-            // Seleccionamos un punto de respawn aleatorio
             GameObject randomRespawnPoint = respawnPoints[Random.Range(0, respawnPoints.Length)];
-            gameObject.SetActive(false);
-            // Restablecer la posición del jugador al punto de respawn aleatorio
+
+            // Ajusta la posición y rotación del jugador
             transform.position = randomRespawnPoint.transform.position;
-            transform.rotation = randomRespawnPoint.transform.rotation; // Si también quieres alinear la rotación
+            transform.rotation = randomRespawnPoint.transform.rotation;
         }
         else
         {
@@ -111,5 +105,4 @@ public class AttibutesManager : NetworkBehaviour
         // Asegurarse de que el jugador esté activo nuevamente
         gameObject.SetActive(true);
     }
-
 }
