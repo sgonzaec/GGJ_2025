@@ -47,7 +47,7 @@ Material:
     - _CastShadows: 1
     - _Cull: 2
     - _DstBlend: 10
-    - _Float: 0.8
+    - _Float: 1.2
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SrcBlend: 5
@@ -56,7 +56,7 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 0.21226855, g: 1.0465332, b: 0.919514, a: 0.7294118}
+    - _Color: {r: 0.12213316, g: 2.6985986, b: 5.1784463, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &9147495510444380835
