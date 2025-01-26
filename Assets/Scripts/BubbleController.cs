@@ -24,6 +24,7 @@ public class BubbleController : NetworkBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+
     void OnMove(InputValue movementValue)
     {
         Vector2 movementVector = movementValue.Get<Vector2>();
@@ -56,5 +57,25 @@ public class BubbleController : NetworkBehaviour
             // Interpolar suavemente la rotación actual hacia la nueva rotación.
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
         }
+    }
+
+    public void ApplyKnockback(Vector3 direction, float force)
+    {
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            // Normalizar la dirección y aplicar la fuerza
+            Vector3 knockbackDirection = direction.normalized;
+            rb.AddForce(knockbackDirection * force, ForceMode.Impulse);
+        }
+    }
+
+    public void HitPlayer(GameObject attacker, float knockbackForce)
+    {
+        // Obtener la dirección del golpe
+        Vector3 direction = transform.position - attacker.transform.position;
+
+        // Aplicar knockback
+        ApplyKnockback(direction, knockbackForce);
     }
 }

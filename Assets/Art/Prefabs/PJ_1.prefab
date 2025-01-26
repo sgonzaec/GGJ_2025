@@ -248,6 +248,11 @@ MonoBehaviour:
   health:
     m_InternalValue: 3
   attack: 1
+  respawnPoints:
+  - {fileID: 5843403302869122508, guid: 16de787362a034a40949f96f42c0f4ce, type: 3}
+  - {fileID: 4460725184709408439, guid: 462f52fb983b6a4419d51df2ae7824d5, type: 3}
+  - {fileID: 4802333771831388385, guid: 92b38410ca6d8fe4a912bec1b39dab36, type: 3}
+  - {fileID: 3279767070948120403, guid: 43861abcb903e9044aedf95bb0172a13, type: 3}
 --- !u!1 &2820873651510605904
 GameObject:
   m_ObjectHideFlags: 0

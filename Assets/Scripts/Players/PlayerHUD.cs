@@ -5,6 +5,7 @@ using Unity.Netcode;
 using TMPro;
 using System.Linq;
 using System;
+using Random = UnityEngine.Random;
 
 public class PlayerHUD : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class PlayerHUD : MonoBehaviour
 
     private Dictionary<ulong, TMP_Text> playerLivesTexts = new Dictionary<ulong, TMP_Text>();
     private Dictionary<ulong, CanvasGroup[]> playerLivesHearts = new Dictionary<ulong, CanvasGroup[]>();
-
+    
     private void Start()
     {
         Debug.Log($"PlayerHUD activo: {gameObject.name}");
@@ -67,12 +68,15 @@ public class PlayerHUD : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log($"On distroi.");
+        Debug.Log($"On Destroy.");
         if (NetworkManager.Singleton != null)
         {
             NetworkManager.Singleton.OnClientConnectedCallback -= OnPlayerConnected;
         }
     }
+
+    [ServerRpc(RequireOwnership = false)]
+
     private void OnPlayerConnected(ulong playerId)
     {
         Debug.Log($"Player conectado: {playerId}");
@@ -212,10 +216,10 @@ public class PlayerHUD : MonoBehaviour
         }
 
         // Eliminar las barras de vida de los jugadores muertos
-        foreach (var playerId in playersToRemove)
+       /* foreach (var playerId in playersToRemove)
         {
             RemovePlayerFromHUD(playerId);
-        }
+        }*/
     }
 
     private void RemovePlayerFromHUD(ulong playerId)
