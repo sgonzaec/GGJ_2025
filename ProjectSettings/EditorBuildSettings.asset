@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuInitial.unity
     guid: 5c9f134fa9f79974b8263298b8cfbb05
   - enabled: 1
+    path: Assets/Scenes/SelecCharter.unity
+    guid: 801f7b4d59092d143a092beabb7816f1
+  - enabled: 1
     path: Assets/Scenes/BrawlScene.unity
     guid: 299fcf01be0383f40b0daca014649870
   m_configObjects:
