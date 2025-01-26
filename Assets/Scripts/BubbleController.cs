@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Unity.Netcode;
+using System;
 
 public class BubbleController : NetworkBehaviour
 {
@@ -9,6 +10,10 @@ public class BubbleController : NetworkBehaviour
     private float movementX;
     private float movementY;
     public float rotationThreshold = 0.1f; // Umbral mínimo para la rotación.
+
+    float gravedad = -9.8f;
+    Vector3 movement;
+    [SerializeField] CharacterController pJ;//Rerencia del character controller del personaje
 
     public override void OnNetworkDespawn()
     {
@@ -32,18 +37,22 @@ public class BubbleController : NetworkBehaviour
     }
 
     private void FixedUpdate()
-    {
-        // Crear un vector de movimiento basado en los inputs.
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+    { 
+    //{
+    //    // Crear un vector de movimiento basado en los inputs.
+         movement = new Vector3(movementX, 0.0f, movementY);
 
-        // Mover al jugador.
-        if (rb != null)
-        {
-            rb.AddForce(movement * speed);
-        }
+        //    // Mover al jugador.
+        //    if (rb != null)
+        //    {
+        //        rb.AddForce(movement * speed);
+        //    }
 
-        // Rotar al jugador hacia la dirección del movimiento.
-        RotateCharacter(movement);
+        //    // Rotar al jugador hacia la dirección del movimiento.
+            RotateCharacter(movement);
+
+        //Gravedad();
+        pJ.Move(movement*speed);
     }
 
     private void RotateCharacter(Vector3 movement)
@@ -56,5 +65,11 @@ public class BubbleController : NetworkBehaviour
             // Interpolar suavemente la rotación actual hacia la nueva rotación.
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
         }
+    }
+
+    void Gravedad()
+    {
+        if(movement.y >= 0.1)
+            movement.y = gravedad*Time.deltaTime;   
     }
 }

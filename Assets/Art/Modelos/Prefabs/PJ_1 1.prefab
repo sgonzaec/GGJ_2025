@@ -16,10 +16,9 @@ GameObject:
   - component: {fileID: 6243240459751236294}
   - component: {fileID: 6339791278033100680}
   - component: {fileID: -3539020716879567998}
-  - component: {fileID: -5467693842884238667}
-  - component: {fileID: 6432400692579189366}
+  - component: {fileID: 3958783390097926623}
   m_Layer: 0
-  m_Name: PJ_1
+  m_Name: PJ_1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1136574171
+  GlobalObjectIdHash: 2377928873
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -109,9 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  speed: 0.2
+  speed: 10
   rotationThreshold: 0.1
-  pJ: {fileID: -5467693842884238667}
 --- !u!114 &4198478924640280765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   TransitionStateInfoList: []
-  m_Animator: {fileID: 6432400692579189366}
+  m_Animator: {fileID: 0}
 --- !u!114 &6339791278033100680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   lifeIcons: []
---- !u!143 &-5467693842884238667
+--- !u!143 &3958783390097926623
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,29 +215,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &6432400692579189366
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325964187552258728}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 974d3392fec28ad43aaa1d3ed6726ce6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &927322873105563583
 PrefabInstance:
   m_ObjectHideFlags: 0
