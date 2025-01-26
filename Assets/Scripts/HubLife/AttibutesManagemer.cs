@@ -4,16 +4,11 @@ using System.Collections;
 
 public class AttibutesManager : NetworkBehaviour
 {
-    public NetworkVariable<int> health = new NetworkVariable<int>(3);
+    // La salud es manejada como una NetworkVariable
+    public NetworkVariable<int> health = new NetworkVariable<int>(3, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     public int attack = 1;
-
-    public override void OnNetworkSpawn()
-    {
-        if (IsServer)
-        {
-            health.Value = 3; // Valor inicial de salud
-        }
-    }
+    public GameObject[] respawnPoints;
+    private int deathCount = 0;
 
     public void TakeDamage(int amount)
     {
@@ -40,34 +35,74 @@ public class AttibutesManager : NetworkBehaviour
 
     private IEnumerator HandlePlayerDeath()
     {
-        // Notifica a los clientes que borren el corazón
-        RemoveHeartClientRpc();
+        // Espera 1 segundo antes del respawn
+        yield return new WaitForSeconds(1f);
 
-        // Espera 1 segundo (ajusta según el tiempo necesario para borrar el corazón)
-        yield return new WaitForSeconds(0.1f);
+        // Aumenta el contador de muertes
+        deathCount++;
 
-        // Destruye el jugador
-        DestroyPlayerClientRpc();
+        if (deathCount >= 3)
+        {
+            // Si el personaje ha muerto 3 veces, lo destruye
+            DestroyPlayerClientRpc();
+        }
+        else
+        {
+            // El servidor controla el respawn
+            RespawnPlayerServerRpc();
+        }
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void RespawnPlayerServerRpc()
+    {
+        // Resetea la vida y ejecuta el respawn
+        health.Value = 3; // Esto sincroniza automáticamente la salud con los clientes
+        Debug.Log($"Reseteando la salud del jugador {gameObject.name} a {health.Value}");
+
+        RespawnPlayer(); // Lógica de respawn en el servidor
+
+        // Notifica a los clientes que el jugador ha respawneado
+        RespawnPlayerClientRpc(transform.position, transform.rotation);
     }
 
     [ClientRpc]
-    private void RemoveHeartClientRpc()
+    private void RespawnPlayerClientRpc(Vector3 newPosition, Quaternion newRotation)
     {
-        // Aquí puedes implementar la lógica para borrar el corazón
-        Debug.Log("Borrando corazón en los clientes.");
-        // Ejemplo: Animación de quitar corazón o esconder el objeto visualmente
-        // Puedes interactuar con un componente UI o activar una animación específica.
+        Debug.Log($"El jugador {gameObject.name} ha respawneado en la posición {newPosition}");
+
+        // Actualiza la posición y rotación del jugador en el cliente
+        transform.position = newPosition;
+        transform.rotation = newRotation;
+
+        // Asegurarse de que el jugador esté activo
+        gameObject.SetActive(true);
     }
 
     [ClientRpc]
     private void DestroyPlayerClientRpc()
     {
         Debug.Log("Destruyendo el jugador en los clientes.");
-
-        // Aquí puedes añadir efectos visuales adicionales, como una explosión
-        // Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-
-        // Destruir el GameObject en todos los clientes
         Destroy(gameObject);
+    }
+
+    private void RespawnPlayer()
+    {
+        // El servidor elige un punto de respawn
+        if (respawnPoints.Length > 0)
+        {
+            GameObject randomRespawnPoint = respawnPoints[Random.Range(0, respawnPoints.Length)];
+
+            // Ajusta la posición y rotación del jugador
+            transform.position = randomRespawnPoint.transform.position;
+            transform.rotation = randomRespawnPoint.transform.rotation;
+        }
+        else
+        {
+            Debug.LogError("No hay puntos de respawn asignados.");
+        }
+
+        // Asegurarse de que el jugador esté activo nuevamente
+        gameObject.SetActive(true);
     }
 }
