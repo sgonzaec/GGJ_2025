@@ -6,6 +6,14 @@ public class AttibutesManager : NetworkBehaviour
     public NetworkVariable<int> health = new NetworkVariable<int>(100);
     public int attack = 10;
 
+    public override void OnNetworkSpawn()
+    {
+        if (IsServer)
+        {
+            health.Value = 100; // Valor inicial de salud
+        }
+    }
+
     public void TakeDamage(int amount)
     {
         if (!IsServer) return; // Solo el servidor puede modificar la salud
